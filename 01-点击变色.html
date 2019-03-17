@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Page Title</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 160px;
+            background-color: pink;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+        }
+
+        #box div {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            line-height: 150px;
+            text-align: center;
+            font-size: 30px;
+            color: azure;
+        }
+
+        #box div.skyblue {
+            background-color: skyblue;
+        }
+
+        #box div.red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+<div id="box">
+    <div>1</div>
+    <div class="skyblue">2</div>
+    <div>3</div>
+</div>
+<script>
+    var box = document.getElementById('box');
+    var boxs = box.getElementsByTagName('div');
+    console.dir(boxs)
+    //方法一
+    //    for(var i=0; i<boxs.length;i++){
+    //        boxs[i].onclick=function(){
+    //            for(var i=0; i<boxs.length;i++){
+    //                boxs[i].className='red';
+    //            }
+    //            this.className='skyblue';
+    //        }
+    //    }
+    //方法二
+    boxs[0].onclick = function () {
+        boxs[0].className = 'skyblue';
+        boxs[1].className = 'red';
+        boxs[2].className = 'red';
+    }
+    boxs[1].onclick = function () {
+
+        boxs[0].className = 'red';
+        boxs[1].className = 'skyblue';
+        boxs[2].className = 'red';
+    }
+    boxs[2].onclick = function () {
+        boxs[0].className = 'red';
+        boxs[1].className = 'red';
+        boxs[2].className = 'skyblue';
+    }
+
+
+
+//        boxs[1].onclick=function(){
+//            boxs[1].className='skyblue';
+//            boxs[0].className='red';
+//            boxs[2].className='red';
+//        }
+//        boxs[2].onclick=function(){
+//            boxs[2].className='skyblue';
+//            boxs[1].className='red';
+//            boxs[0].className='red';
+//        }
+
+</script>
+</body>
+
+</html>

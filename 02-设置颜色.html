@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-top: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="red" class="btn">
+    <input type="button" value="blue" class="btn">
+    <input type="button" value="green" class="btn">
+    <div id="box"></div>
+    <script>
+        var btn=document.getElementsByClassName('btn');
+//        console.log(btn)
+        btn[0].onclick=function(){
+            var box=document.getElementById('box');
+            box.className="red";
+        };
+        btn[1].onclick=function(){
+            var box=document.getElementById('box');
+            box.className="blue";
+        };
+        btn[2].onclick=function(){
+            var box=document.getElementById('box');
+            box.className="green";
+        }
+    </script>
+</body>
+</html>
